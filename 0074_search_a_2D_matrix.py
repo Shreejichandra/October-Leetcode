@@ -10,15 +10,11 @@ class Solution:
         if matrix == [[]]:
             return False
         
-        for i in range(len(matrix)):
-            row_length = len(matrix[i])
-            if matrix[i][0] <= target <= matrix[i][-1]:
-                for j in range(row_length):
-                    if matrix[i][j] == target:
-                        return True
-                    if matrix[i][j] > target:
-                        return False
-                    
-            else:
-                i += 1 
+        for i in matrix:
+            if i[0] <= target <= i[-1]:
+                if target in i:
+                    return True
+        return False
+
+        
         
